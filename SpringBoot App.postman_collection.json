@@ -1,0 +1,117 @@
+{
+	"info": {
+		"_postman_id": "749655b2-1268-4648-a1b5-6688664ebbd8",
+		"name": "SpringBoot App",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "27210717"
+	},
+	"item": [
+		{
+			"name": "Add Ticket",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"phoneNum\":\"9876543210\",\r\n\t\"category\":\"SIM\",\r\n\t\"status\":\"OPEN\",\r\n\t\"issueDetails\":\"This is a test\",\r\n\t\"resolutionDetails\":null,\r\n\t\"createdAt\":\"2024-12-31\",\r\n\t\"resolvedAt\":null\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/ticket/add",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"ticket",
+						"add"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update ticket",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"phoneNum\":\"9876543210\",\r\n\t\"category\":\"SIM\",\r\n\t\"status\":\"CLOSED\",\r\n\t\"issueDetails\":\"This is a test\",\r\n\t\"resolutionDetails\":\"This is resolved\",\r\n\t\"createdAt\":\"2024-12-31\",\r\n\t\"resolvedAt\":null\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/ticket/update/4",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"ticket",
+						"update",
+						"4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Ticket By ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/ticket/getticket/4",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"ticket",
+						"getticket",
+						"4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get OPEN tickets",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/ticket/getOpenTickets",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"ticket",
+						"getOpenTickets"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
